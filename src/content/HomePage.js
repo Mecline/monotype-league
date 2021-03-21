@@ -1,17 +1,21 @@
 import { Button, Typography } from '@material-ui/core';
-import { format } from 'date-fns';
 import React from 'react';
-import participants from '../data/participants.json';
+import { participants } from '../data/participants.js';
 import './theme.css';
 import MatchTable from './MatchTable';
+import dayjs from 'dayjs';
 
 class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
-            compList: participants.participants,
+            compList: participants,
             week: 0
         };
+    }
+
+    weekSet(weekId) {
+        this.setState({ week: weekId });
     }
 
     weekForward() {
@@ -21,6 +25,40 @@ class HomePage extends React.Component {
         else (
             this.setState({ week: 0 })
         )
+    }
+
+    weekBack() {
+        if (this.state.week >= 1) {
+            this.setState({ week: this.state.week - 1 })
+        }
+        else (
+            this.setState({ week: 14 })
+        )
+    }
+
+    generateWeekList(numWeeks, startDate, rotationPeriod) {
+        let weekList = [];
+        for (let i = 0; i < numWeeks; i++) {
+            weekList.push({
+                id: i,
+                start: i === 0 ? startDate : dayjs(startDate).add(rotationPeriod * i, 'day'),
+                end: dayjs(startDate).add((rotationPeriod * (i + 1)) - 1, 'day')
+            })
+        }
+        return weekList;
+    }
+
+    getCurrentWeekId(weekList) {
+        let currentWeekId = 1;
+        let today = new Date();
+        weekList.map((week) => {
+            if (dayjs(today).isBetween(week.start, week.end)) {
+                currentWeekId = week.id;
+                this.weekSet(currentWeekId);
+            }
+            return currentWeekId;
+        })
+        return currentWeekId;
     }
 
     rotate(participant, rotations) {
@@ -61,89 +99,34 @@ class HomePage extends React.Component {
     }
 
     render() {
-        let weekList = [{
-            id: 1,
-            start: new Date(2021, 2, 26),
-            end: new Date(2021, 3, 2)
-        }, {
-            id: 2,
-            start: new Date(2021, 3, 3),
-            end: new Date(2021, 3, 9)
-        }, {
-            id: 3,
-            start: new Date(2021, 3, 10),
-            end: new Date(2021, 3, 16)
-        }, {
-            id: 4,
-            start: new Date(2021, 3, 17),
-            end: new Date(2021, 3, 23)
-        }, {
-            id: 5,
-            start: new Date(2021, 3, 24),
-            end: new Date(2021, 3, 30)
-        }, {
-            id: 6,
-            start: new Date(2021, 4, 1),
-            end: new Date(2021, 4, 7)
-        }, {
-            id: 7,
-            start: new Date(2021, 4, 8),
-            end: new Date(2021, 4, 14)
-        }, {
-            id: 8,
-            start: new Date(2021, 4, 15),
-            end: new Date(2021, 4, 21)
-        }, {
-            id: 9,
-            start: new Date(2021, 4, 22),
-            end: new Date(2021, 4, 28)
-        }, {
-            id: 10,
-            start: new Date(2021, 4, 29),
-            end: new Date(2021, 5, 4)
-        }, {
-            id: 11,
-            start: new Date(2021, 5, 5),
-            end: new Date(2021, 5, 11)
-        }, {
-            id: 12,
-            start: new Date(2021, 5, 12),
-            end: new Date(2021, 5, 18)
-        }, {
-            id: 13,
-            start: new Date(2021, 5, 19),
-            end: new Date(2021, 5, 25)
-        }, {
-            id: 14,
-            start: new Date(2021, 5, 26),
-            end: new Date(2021, 6, 2)
-        }, {
-            id: 15,
-            start: new Date(2021, 6, 3),
-            end: new Date(2021, 6, 9)
-        }
-        ];
-        let today = new Date();
-        let rotatedCompList = this.matchSet(this.state.compList, this.state.week);
+        var isBetween = require('dayjs/plugin/isBetween')
+        dayjs.extend(isBetween)
+        let weekList = this.generateWeekList(15, new Date(2021, 2, 27), 7);
         let compList = this.state.compList;
+        let rotatedCompList = this.matchSet(compList, this.state.week);
         let orderedList = [];
 
         return (
-            <div className="App-header">
+            <div className="homePage">
                 <div style={{ padding: '10px', textAlign: 'center' }}>
-
-                    <Typography>Week Of: {format(weekList[this.state.week].start, 'MM.dd.yyyy')} - {format(weekList[this.state.week].end, 'MM.dd.yyyy')}</Typography>
-                    <Button style={{ color: 'white' }} onClick={() => this.weekForward()}>WEEK FORWARD</Button>
-
+                    <Typography>TODAY: {dayjs(new Date()).format('MMMM D YYYY')}</Typography>
+                    <Typography>Week Of: {dayjs(weekList[this.state.week].start).format('MMMM D YYYY')} - {dayjs(weekList[this.state.week].end).format('MMMM D YYYY')} </Typography>
+                    <Button style={{ marginRight: '15px', backgroundColor: 'rgb(108, 122, 245)', color: 'white' }} variant="contained" onClick={() => this.weekForward()}>WEEK FORWARD</Button>
+                    <Button style={{ marginRight: '15px', backgroundColor: 'rgb(108, 122, 245)', color: 'white' }} variant="contained" onClick={() => this.weekBack()}>WEEK BACK</Button>
+                    <Button style={{ marginRight: '15px', backgroundColor: 'rgb(108, 122, 245)', color: 'white' }} variant="contained" onClick={() => this.getCurrentWeekId(weekList)}>SKIP TO CURRENT</Button>
                 </div>
                 <div style={{ padding: '10px', textAlign: 'center' }}>
-                    <Typography>Matches</Typography>
+                    <Typography style={{ fontSize: '24px' }}>Matches</Typography>
 
                     {rotatedCompList.map((id) => {
                         orderedList = orderedList.concat(compList.filter(data => data.id === id));
+                        return null;
                     })}
 
                     <MatchTable orderedList={orderedList} />
+
+                    <Typography style={{ paddingTop: '15px' }}>To find your match for the week, find your name and then your opponent will be directly below you.
+                         "Skip to Current" can be used to take you to the current week of your match.</Typography>
 
                 </div>
             </div >
