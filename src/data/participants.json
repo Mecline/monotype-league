@@ -1,0 +1,164 @@
+{
+  "participants": [
+    {
+      "id": 0,
+      "name": "Cockney Criminals",
+      "discordTag": "Tsfusion#6898",
+      "type": "Dark",
+      "color": "#201e2b",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 1,
+      "name": "Gale Force",
+      "discordTag": "altariasong#2201",
+      "type": "Dragon",
+      "color": "#1900a3",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 2,
+      "name": "Flipside",
+      "discordTag": "TheFlipSide#7844",
+      "type": "Normal",
+      "color": "#575173",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 3,
+      "name": "Evermin",
+      "discordTag": "evermin#5523",
+      "type": "Rock",
+      "color": "#61330e",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 4,
+      "name": "Recnekoh",
+      "discordTag": "Recnekoh#4425",
+      "type": "Ice",
+      "color": "#4dc4d6",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 5,
+      "name": "ErrorCode6263",
+      "discordTag": "ErrorCode6263#0841",
+      "type": "Flying",
+      "color": "#55a4e0",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 6,
+      "name": "UNE",
+      "discordTag": "uncle_jemima888#3482",
+      "type": "Water",
+      "color": "#001ae0",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 7,
+      "name": "Tiny Cthulhus",
+      "discordTag": "TinyCthulhu#3253",
+      "type": "Ghost",
+      "color": "#5c69cc",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 8,
+      "name": "Bonfire Mafia",
+      "discordTag": "GuardianAngel#5217",
+      "type": "Fire",
+      "color": "#f5901d",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 9,
+      "name": "Team Brain Bonkas",
+      "discordTag": "Coffeechipmunk#1818",
+      "type": "Psychic",
+      "color": "#bb3dbf",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 10,
+      "name": "East Coast Electricity",
+      "discordTag": "Centauri#5191",
+      "type": "Electric",
+      "color": "#ebcf00",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 11,
+      "name": "St. Louis Rawberries",
+      "discordTag": "St. Rawberry#9949",
+      "type": "Grass",
+      "color": "#2cc40a",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 12,
+      "name": "thepsynergist",
+      "discordTag": "thepsynergist#4371",
+      "type": "Bug",
+      "color": "#5fb34d",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 13,
+      "name": "Amber",
+      "discordTag": "Amber [KitimaK]#9200",
+      "type": "Poison",
+      "color": "#8858cc",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 14,
+      "name": "Wilmington Traffic",
+      "discordTag": "mrsmustard#2187",
+      "type": "Fairy",
+      "color": "#ff05ea",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    },
+    {
+      "id": 15,
+      "name": "Sparklem.ash",
+      "discordTag": "sparklem.ash#5923",
+      "type": "Steel",
+      "color": "#302d30",
+      "badge": "",
+      "wins": "0",
+      "losses": "0"
+    }
+  ]
+}
