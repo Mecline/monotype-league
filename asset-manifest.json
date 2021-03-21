@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/monotype-league/static/css/main.045e36a1.chunk.css",
-    "main.js": "/monotype-league/static/js/main.9fc89d13.chunk.js",
-    "main.js.map": "/monotype-league/static/js/main.9fc89d13.chunk.js.map",
+    "main.js": "/monotype-league/static/js/main.46f20098.chunk.js",
+    "main.js.map": "/monotype-league/static/js/main.46f20098.chunk.js.map",
     "runtime-main.js": "/monotype-league/static/js/runtime-main.0546a35f.js",
     "runtime-main.js.map": "/monotype-league/static/js/runtime-main.0546a35f.js.map",
     "static/js/2.6bc5f587.chunk.js": "/monotype-league/static/js/2.6bc5f587.chunk.js",
@@ -12,14 +12,15 @@
     "index.html": "/monotype-league/index.html",
     "static/css/main.045e36a1.chunk.css.map": "/monotype-league/static/css/main.045e36a1.chunk.css.map",
     "static/js/2.6bc5f587.chunk.js.LICENSE.txt": "/monotype-league/static/js/2.6bc5f587.chunk.js.LICENSE.txt",
+    "static/media/darkBadge.png": "/monotype-league/static/media/darkBadge.d2205f1e.png",
     "static/media/dragonBadge.png": "/monotype-league/static/media/dragonBadge.db896d9c.png",
     "static/media/grassBadge.png": "/monotype-league/static/media/grassBadge.b0de6a95.png",
-    "static/media/psychicBadge.png": "/monotype-league/static/media/psychicBadge.193bad55.png"
+    "static/media/psychicBadge.png": "/monotype-league/static/media/psychicBadge.3439fe96.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0546a35f.js",
     "static/js/2.6bc5f587.chunk.js",
     "static/css/main.045e36a1.chunk.css",
-    "static/js/main.9fc89d13.chunk.js"
+    "static/js/main.46f20098.chunk.js"
   ]
 }
