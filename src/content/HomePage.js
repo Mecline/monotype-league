@@ -1,9 +1,9 @@
+import { Button, Typography } from '@material-ui/core';
+import { format } from 'date-fns';
 import React from 'react';
-import { Button, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
 import participants from '../data/participants.json';
-import moment from 'moment';
 import './theme.css';
-import { closestTo, format, formatDistance, formatRelative, subDays } from 'date-fns';
+import MatchTable from './MatchTable';
 
 class HomePage extends React.Component {
     constructor() {
@@ -50,15 +50,13 @@ class HomePage extends React.Component {
         return rotatedParticipant;
     }
 
-    matchSet(compList, weekList, weekRotation) {
+    matchSet(compList, weekRotation) {
         let rotations = weekRotation;
         let rotatedCompList = [];
 
         compList.map((participant) => {
             return rotatedCompList.push(this.rotate(participant, rotations));
         })
-
-        console.log(rotatedCompList)
         return rotatedCompList;
     }
 
@@ -126,7 +124,9 @@ class HomePage extends React.Component {
         }
         ];
         let today = new Date();
-        let rotatedCompList = this.matchSet(this.state.compList, weekList, this.state.week);
+        let rotatedCompList = this.matchSet(this.state.compList, this.state.week);
+        let compList = this.state.compList;
+        let orderedList = [];
 
         return (
             <div className="App-header">
@@ -136,37 +136,17 @@ class HomePage extends React.Component {
                     <Button style={{ color: 'white' }} onClick={() => this.weekForward()}>WEEK FORWARD</Button>
 
                 </div>
-                <div>
+                <div style={{ padding: '10px', textAlign: 'center' }}>
                     <Typography>Matches</Typography>
-                    <Typography>{rotatedCompList}</Typography>
 
+                    {rotatedCompList.map((id) => {
+                        orderedList = orderedList.concat(compList.filter(data => data.id === id));
+                    })}
 
-                    {/* <TableContainer component={Paper}>
-                        <Table aria-label="simple table">
-                            <TableRow>
-                                <TableCell width='300px'>
-                                    {compList.map((person, id) => (
-                                        id <= 7 &&
-                                        <TableCell>
-                                            <Typography style={{ color: person.color }}>{person.name}</Typography>
-                                        </TableCell>
-                                    ))}
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell width='300px'>
-                                    {compList.map((person, id) => (
-                                        id > 7 &&
-                                        <TableCell>
-                                            <Typography style={{ color: person.color }}>{person.name}</Typography>
-                                        </TableCell>
-                                    ))}
-                                </TableCell>
-                            </TableRow>
-                        </Table>
-                    </TableContainer> */}
+                    <MatchTable orderedList={orderedList} />
+
                 </div>
-            </div>
+            </div >
         )
     }
 }
