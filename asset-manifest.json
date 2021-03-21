@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/monotype-league/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/monotype-league/static/js/main.7d14d395.chunk.js",
-    "main.js.map": "/monotype-league/static/js/main.7d14d395.chunk.js.map",
+    "main.js": "/monotype-league/static/js/main.f5045fb1.chunk.js",
+    "main.js.map": "/monotype-league/static/js/main.f5045fb1.chunk.js.map",
     "runtime-main.js": "/monotype-league/static/js/runtime-main.4a4105a4.js",
     "runtime-main.js.map": "/monotype-league/static/js/runtime-main.4a4105a4.js.map",
     "static/js/2.ae2d4a5a.chunk.js": "/monotype-league/static/js/2.ae2d4a5a.chunk.js",
@@ -11,13 +11,12 @@
     "static/js/3.2eb8dad8.chunk.js.map": "/monotype-league/static/js/3.2eb8dad8.chunk.js.map",
     "index.html": "/monotype-league/index.html",
     "static/css/main.9d5b29c0.chunk.css.map": "/monotype-league/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.ae2d4a5a.chunk.js.LICENSE.txt": "/monotype-league/static/js/2.ae2d4a5a.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/monotype-league/static/media/logo.6ce24c58.svg"
+    "static/js/2.ae2d4a5a.chunk.js.LICENSE.txt": "/monotype-league/static/js/2.ae2d4a5a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4a4105a4.js",
     "static/js/2.ae2d4a5a.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.7d14d395.chunk.js"
+    "static/js/main.f5045fb1.chunk.js"
   ]
 }
