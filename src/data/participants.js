@@ -15,7 +15,7 @@ export const participants = [
   },
   {
     "id": 2,
-    "name": "Flipside",
+    "name": "Simple Simon",
     "type": "Normal",
     "color": "#575173",
     "badge": require('../data/normalBadge.png')
@@ -43,7 +43,7 @@ export const participants = [
   },
   {
     "id": 6,
-    "name": "UNE",
+    "name": "Gym Leader Shakah",
     "type": "Water",
     "color": "#001ae0",
     "badge": require('../data/waterBadge.png')
@@ -92,7 +92,7 @@ export const participants = [
   },
   {
     "id": 13,
-    "name": "Amber",
+    "name": "Toxic Haze",
     "type": "Poison",
     "color": "#8858cc",
     "badge": require('../data/poisonBadge.png')
